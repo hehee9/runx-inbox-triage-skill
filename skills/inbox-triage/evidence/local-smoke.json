@@ -1,77 +1,45 @@
 {
-  "schema": "runx.inbox_triage.local_smoke.v1",
-  "command": "node skills/inbox-triage/run.mjs with RUNX_INPUTS_JSON for each fixture",
   "status": "passed",
-  "case_count": 6,
-  "semantic_assertions": [
-    "schema equals runx.inbox.triage.v1",
-    "fixture decisions match expected ready/needs_more_evidence/refused states",
-    "happy path produces a gated draft for dana@example.com",
-    "missing sender, missing body, auto-send, and disallowed commitment expose expected stop fields",
-    "digest-only packet classifies no_reply without a draft or send proposal"
-  ],
-  "results": [
+  "checks": [
     {
-      "fixture": "happy-path",
-      "decision": "ready",
-      "draft_reply": true,
-      "proposal_status": "proposed_not_sent",
-      "stop_fields": [],
-      "classification_count": 2,
-      "queue_count": 2
+      "name": "schema",
+      "ok": true,
+      "details": {}
     },
     {
-      "fixture": "missing-sender",
-      "decision": "needs_more_evidence",
-      "draft_reply": false,
-      "proposal_status": "not_proposed",
-      "stop_fields": [
-        "from"
-      ],
-      "classification_count": 0,
-      "queue_count": 0
+      "name": "happy_ready",
+      "ok": true,
+      "details": {}
     },
     {
-      "fixture": "missing-body",
-      "decision": "needs_more_evidence",
-      "draft_reply": false,
-      "proposal_status": "not_proposed",
-      "stop_fields": [
-        "body"
-      ],
-      "classification_count": 0,
-      "queue_count": 0
+      "name": "classification_labels",
+      "ok": true,
+      "details": {}
     },
     {
-      "fixture": "auto-send-refused",
-      "decision": "refused",
-      "draft_reply": false,
-      "proposal_status": "not_proposed",
-      "stop_fields": [
-        "operator_policy.auto_send"
-      ],
-      "classification_count": 0,
-      "queue_count": 0
+      "name": "missing_sender_stops",
+      "ok": true,
+      "details": {}
     },
     {
-      "fixture": "digest-only",
-      "decision": "ready",
-      "draft_reply": false,
-      "proposal_status": "not_proposed",
-      "stop_fields": [],
-      "classification_count": 1,
-      "queue_count": 1
+      "name": "missing_body_stops",
+      "ok": true,
+      "details": {}
     },
     {
-      "fixture": "commitment-disallowed",
-      "decision": "needs_more_evidence",
-      "draft_reply": false,
-      "proposal_status": "not_proposed",
-      "stop_fields": [
-        "operator_policy.allowed_commitments"
-      ],
-      "classification_count": 1,
-      "queue_count": 1
+      "name": "auto_send_refused",
+      "ok": true,
+      "details": {}
+    },
+    {
+      "name": "digest_ready_no_draft",
+      "ok": true,
+      "details": {}
+    },
+    {
+      "name": "commitment_disallowed_stops",
+      "ok": true,
+      "details": {}
     }
   ]
 }

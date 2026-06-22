@@ -27,7 +27,7 @@ https://gofrantic.com/bounties/34
 
 ## Harness coverage
 
-Local Docker/Linux harness evidence was generated with `runx-cli 0.6.6` and Node `v18.20.4`.
+Local Docker/Linux harness evidence was generated with `runx-cli 0.6.13` and Node `v20.20.2`.
 
 ```text
 runx harness /work/skills/inbox-triage --json --receipt-dir <temp_receipt_dir>
@@ -73,7 +73,9 @@ provides green local harness evidence.
 - `skills/inbox-triage/fixtures/digest-only.json`
 - `skills/inbox-triage/fixtures/commitment-disallowed.json`
 - `skills/inbox-triage/evidence/local-harness.docker.json`
+- `skills/inbox-triage/evidence/local-doctor.docker.json`
 - `skills/inbox-triage/evidence/local-receipts.docker.json`
 - `skills/inbox-triage/evidence/local-smoke.json`
 - `skills/inbox-triage/evidence/local-evidence.docker.json`
 - `skills/inbox-triage/evidence/report.local.md`
+- `skills/inbox-triage/evidence/runx-version.txt`

@@ -1,21 +1,12 @@
 {
-  "schema": "runx.inbox_triage.local_evidence.v1",
-  "package": "inbox-triage",
-  "version": "0.1.0",
-  "source_revision": "local pre-submit package",
-  "runx_version": "runx-cli 0.6.6",
-  "environment": "Docker Linux container from rust:1.91-bookworm with nodejs installed (v18.20.4)",
-  "commands": [
-    "apt-get install -y nodejs",
-    "cargo build --manifest-path crates/Cargo.toml -p runx-cli --bin runx",
-    "runx --version",
-    "runx harness /work/skills/inbox-triage --json --receipt-dir <temp_receipt_dir>",
-    "node skills/inbox-triage/run.mjs with RUNX_INPUTS_JSON for each fixture"
-  ],
+  "schema": "frantic.local_evidence.v1",
+  "runx_version": "runx-cli 0.6.13",
+  "node_version": "v20.20.2",
   "harness": {
     "status": "passed",
     "case_count": 6,
     "assertion_error_count": 0,
+    "assertion_errors": [],
     "case_names": [
       "inbox-triage-happy-path-drafts-gated-reply",
       "inbox-triage-stops-on-missing-sender",
@@ -25,50 +16,67 @@
       "inbox-triage-stops-when-commitments-not-allowed"
     ],
     "receipt_ids": [
-      "sha256:96936c9e66b2f9bbf72e1b7229fd53c6aa1fc2faa77051dd348339b57c1983ae",
-      "sha256:360a053a5e0de01edffd3be6bccfc2202c052c5a456704b08ac755a6a389329a",
-      "sha256:3b2c812578868b48fbc36dab87448eb5f6b4c0d4aa0bf49f6aec96247b1ba66f",
-      "sha256:fe07522bdf96de3a5bb0e8634a4e1ed2213f53a793ecf8280bc76474b40f6086",
-      "sha256:feb78b596c7681d0410ff549b5f71f03018d8a4efd46eff86f95db117db5fa63",
-      "sha256:8d98771ef2fff8bc27bb6ea974cc80507c4bda35da1b36e318a816c45ea7efa2"
+      "sha256:57f2d9f1f8b79a9c36d89e89a0f7a137c50f40f5d6eff3e46fe0d1de43c687f9",
+      "sha256:4b60f3266970630bfdaaaadeaf5a6ad7cfc41d6e543a1742f7f63b35b5130a1a",
+      "sha256:b969ea5ab5c05cc18f33bdb16044c020dbd37c1ab7c92f86a7d6283b28a43a57",
+      "sha256:335a004673087d83d47273da8aca85c02db4668cc4b7ba606f2046137aa64b4e",
+      "sha256:27ee2ee121e0d1c961808da328e4d8818a6423f6e0a4d3f8703556dd3b368e4a",
+      "sha256:804bfe223012918274674f9188ca7af0d517acd7b0feb4d50f075c4bd429ec3e"
     ],
-    "note": "runx harness asserts sealed execution and receipt status; semantic output assertions are recorded in evidence/local-smoke.json."
+    "graph_case_count": 0
   },
   "semantic_smoke": {
     "status": "passed",
-    "case_count": 6,
-    "assertions": [
-      "schema equals runx.inbox.triage.v1",
-      "fixture decisions match expected ready/needs_more_evidence/refused states",
-      "happy path produces a gated draft for dana@example.com",
-      "missing sender, missing body, auto-send, and disallowed commitment expose expected stop fields",
-      "digest-only packet classifies no_reply without a draft or send proposal"
+    "checks": [
+      {
+        "name": "schema",
+        "ok": true,
+        "details": {}
+      },
+      {
+        "name": "happy_ready",
+        "ok": true,
+        "details": {}
+      },
+      {
+        "name": "classification_labels",
+        "ok": true,
+        "details": {}
+      },
+      {
+        "name": "missing_sender_stops",
+        "ok": true,
+        "details": {}
+      },
+      {
+        "name": "missing_body_stops",
+        "ok": true,
+        "details": {}
+      },
+      {
+        "name": "auto_send_refused",
+        "ok": true,
+        "details": {}
+      },
+      {
+        "name": "digest_ready_no_draft",
+        "ok": true,
+        "details": {}
+      },
+      {
+        "name": "commitment_disallowed_stops",
+        "ok": true,
+        "details": {}
+      }
     ]
   },
-  "observations": [
-    "The package contains SKILL.md, X.yaml, fixtures, and a deterministic local run.mjs cli-tool runner.",
-    "Schema validation result: Python JSON/YAML parsing succeeded for every fixture/evidence JSON file and X.yaml; runx doctor skills/inbox-triage --json returned status=success with errors=0, warnings=0, infos=0.",
-    "The emitted packet schema is runx.inbox.triage.v1, matching the X.yaml artifact packet declaration.",
-    "runx harness passed every declared case and produced signed local receipts.",
-    "local-smoke.json records semantic assertions for decisions, draft presence, stop fields, classification labels, and gated send status.",
-    "The happy path produced msg-001 as needs_reply/time_sensitive and msg-002 as digest/no_reply.",
-    "Draft output: msg-001 produces subject 'Re: Launch checklist review' and a concise reply that acknowledges receipt, promises only a later human-confirmed update, and avoids final approval.",
-    "Stop paths cover a missing sender, a missing body, an explicit auto-send request, and a disallowed draft commitment.",
-    "Missing sender and missing body return decision=needs_more_evidence and do not draft or mutate mailbox state.",
-    "Auto-send returns decision=refused and records operator_policy.auto_send as the stop condition.",
-    "Digest-only packets return decision=ready, classify the message as no_reply, and do not propose a draft.",
-    "Reply drafting is bounded by supplied sender/operator allowed topics, optional operator allowed intents, and allowed/forbidden commitment policy.",
-    "Receipt ids: sha256:96936c9e66b2f9bbf72e1b7229fd53c6aa1fc2faa77051dd348339b57c1983ae, sha256:360a053a5e0de01edffd3be6bccfc2202c052c5a456704b08ac755a6a389329a, sha256:3b2c812578868b48fbc36dab87448eb5f6b4c0d4aa0bf49f6aec96247b1ba66f, sha256:fe07522bdf96de3a5bb0e8634a4e1ed2213f53a793ecf8280bc76474b40f6086, sha256:feb78b596c7681d0410ff549b5f71f03018d8a4efd46eff86f95db117db5fa63, sha256:8d98771ef2fff8bc27bb6ea974cc80507c4bda35da1b36e318a816c45ea7efa2.",
-    "Publisher owner and live registry ref are pending public publish; intended registry ref is <owner>/inbox-triage@0.1.0.",
-    "Public PR, raw X.yaml URL, raw SKILL.md URL, hosted harness status, dogfood command, runx verify verdict, source_url, public_url, and registry metadata are pending public submission because they require GitHub/Frantic account action.",
-    "Fixtures use synthetic messages and no private mailbox data.",
-    "Outbound work is represented only as a send-as approval proposal."
-  ],
-  "evidence_files": [
-    "evidence/runx-version.txt",
-    "evidence/local-harness.command.txt",
-    "evidence/local-harness.docker.json",
-    "evidence/local-receipts.docker.json",
-    "evidence/local-smoke.json"
+  "receipt_files_count": 6,
+  "receipt_ids": [
+    "sha256:57f2d9f1f8b79a9c36d89e89a0f7a137c50f40f5d6eff3e46fe0d1de43c687f9",
+    "sha256:4b60f3266970630bfdaaaadeaf5a6ad7cfc41d6e543a1742f7f63b35b5130a1a",
+    "sha256:b969ea5ab5c05cc18f33bdb16044c020dbd37c1ab7c92f86a7d6283b28a43a57",
+    "sha256:335a004673087d83d47273da8aca85c02db4668cc4b7ba606f2046137aa64b4e",
+    "sha256:27ee2ee121e0d1c961808da328e4d8818a6423f6e0a4d3f8703556dd3b368e4a",
+    "sha256:804bfe223012918274674f9188ca7af0d517acd7b0feb4d50f075c4bd429ec3e"
   ]
 }
