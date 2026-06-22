@@ -1,0 +1,18 @@
+Docker/Linux local harness evidence generated with runx-cli 0.6.6:
+Base image: rust:1.91-bookworm
+Setup: apt-get install -y nodejs
+Node: v18.20.4
+RUNX=/tmp/runx-target/debug/runx
+runx --version
+runx harness /work/skills/inbox-triage --json --receipt-dir <temp_receipt_dir>
+
+Environment used only for local deterministic receipt signing:
+NO_COLOR=1
+RUNX_HOME=<temp>/home
+RUNX_CWD=<temp>/w
+RUNX_KERNEL_EVAL_BIN=/tmp/runx-target/debug/runx
+RUNX_PARSER_EVAL_BIN=/tmp/runx-target/debug/runx
+RUNX_RUST_CLI_BIN=/tmp/runx-target/debug/runx
+RUNX_DEV_RUST_CLI_BIN=/tmp/runx-target/debug/runx
+RUNX_RECEIPT_SIGN_KID=inbox-triage-docker-test-key
+RUNX_RECEIPT_SIGN_ISSUER_TYPE=hosted

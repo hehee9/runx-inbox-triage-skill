@@ -1,0 +1,812 @@
+[
+  {
+    "schema": "runx.receipt.v1",
+    "id": "sha256:360a053a5e0de01edffd3be6bccfc2202c052c5a456704b08ac755a6a389329a",
+    "created_at": "2026-06-22T08:55:44.144Z",
+    "canonicalization": "runx.receipt.c14n.v1",
+    "issuer": {
+      "type": "hosted",
+      "kid": "inbox-triage-docker-test-key",
+      "public_key_sha256": "sha256:3097e2dee2cb4a34b53840cdb705aed71067c36f68db0e0f559c3f3fa043315f"
+    },
+    "signature": {
+      "alg": "Ed25519",
+      "value": "base64:D54T-JgfjEJ11uRLwiiuJCRtJnQp2zCqrWYhu9guvz79KAqllHramzWoZouP54TligZY6XWjqagGwZjEpxHNBg"
+    },
+    "digest": "sha256:3d3e6b5c2f95fdb458af888ffafa8dd35650d19864b14705cf5cac3697feaa79",
+    "idempotency": {
+      "intent_key": "sha256:run_triage_d035bbbf88f5-triage-intent",
+      "trigger_fingerprint": "sha256:run_triage_d035bbbf88f5-triage-trigger",
+      "content_hash": "sha256:run_triage_d035bbbf88f5-triage-content"
+    },
+    "subject": {
+      "kind": "skill",
+      "ref": {
+        "type": "harness",
+        "uri": "hrn_run_triage_d035bbbf88f5_triage"
+      },
+      "commitments": []
+    },
+    "authority": {
+      "actor_ref": {
+        "type": "principal",
+        "uri": "runx:principal:local_runtime"
+      },
+      "grant_refs": [],
+      "scope_refs": [],
+      "authority_proof_refs": [],
+      "attenuation": {
+        "parent_authority_ref": null,
+        "subset_proof": null
+      },
+      "terms": [],
+      "enforcement": {
+        "profile_hash": "sha256:runtime-skeleton-enforcement",
+        "redaction_refs": [],
+        "setup_refs": [],
+        "teardown_refs": []
+      }
+    },
+    "signals": [],
+    "decisions": [
+      {
+        "decision_id": "dec_triage",
+        "choice": "open",
+        "inputs": {
+          "signal_refs": [],
+          "target_ref": null,
+          "opportunity_refs": [],
+          "selection_ref": null
+        },
+        "proposed_intent": {
+          "purpose": "Open runtime node triage",
+          "legitimacy": "Local graph execution requested this node",
+          "success_criteria": [],
+          "constraints": [],
+          "derived_from": []
+        },
+        "selected_act_id": "act_triage",
+        "selected_harness_ref": null,
+        "justification": {
+          "summary": "runtime graph planner selected this node",
+          "evidence_refs": []
+        },
+        "closure": null,
+        "artifact_refs": []
+      }
+    ],
+    "acts": [
+      {
+        "id": "act_triage",
+        "form": "observation",
+        "intent": {
+          "purpose": "Run graph step triage",
+          "legitimacy": "Runtime graph execution was admitted by the local harness",
+          "success_criteria": [
+            {
+              "criterion_id": "process_exit",
+              "statement": "cli-tool exits successfully",
+              "required": true
+            }
+          ],
+          "constraints": [],
+          "derived_from": []
+        },
+        "summary": "Executed graph step triage",
+        "criterion_bindings": [
+          {
+            "criterion_id": "process_exit",
+            "status": "verified",
+            "evidence_refs": [],
+            "verification_refs": [],
+            "summary": "cli-tool exited successfully"
+          }
+        ],
+        "source_refs": [],
+        "target_refs": [],
+        "artifact_refs": [],
+        "closure": {
+          "disposition": "closed",
+          "reason_code": "process_exit",
+          "summary": "cli-tool exited successfully",
+          "closed_at": "2026-06-22T08:55:44.144Z"
+        }
+      }
+    ],
+    "seal": {
+      "disposition": "closed",
+      "reason_code": "process_closed",
+      "summary": "cli-tool triage completed",
+      "closed_at": "2026-06-22T08:55:44.144Z",
+      "last_observed_at": "2026-06-22T08:55:44.144Z",
+      "criteria": [
+        {
+          "criterion_id": "process_exit",
+          "status": "verified",
+          "evidence_refs": [],
+          "verification_refs": [],
+          "summary": "cli-tool exited successfully"
+        }
+      ]
+    },
+    "lineage": {
+      "children": [],
+      "sync": []
+    }
+  },
+  {
+    "schema": "runx.receipt.v1",
+    "id": "sha256:3b2c812578868b48fbc36dab87448eb5f6b4c0d4aa0bf49f6aec96247b1ba66f",
+    "created_at": "2026-06-22T08:55:44.269Z",
+    "canonicalization": "runx.receipt.c14n.v1",
+    "issuer": {
+      "type": "hosted",
+      "kid": "inbox-triage-docker-test-key",
+      "public_key_sha256": "sha256:3097e2dee2cb4a34b53840cdb705aed71067c36f68db0e0f559c3f3fa043315f"
+    },
+    "signature": {
+      "alg": "Ed25519",
+      "value": "base64:IOnTPoAKlJgBcgJsMPct1nguE1Y2xMNoxD4FcRMuUP0uhGcQCOrDat8htsQ6AyU73kXx4ec2s838Bz9ozhKABQ"
+    },
+    "digest": "sha256:e62e0b64b7f3b54cd6f0692a6f379f5ca55d9fdcff11f1a0c16b85911c5e8ba6",
+    "idempotency": {
+      "intent_key": "sha256:run_triage_0337a1ca6236-triage-intent",
+      "trigger_fingerprint": "sha256:run_triage_0337a1ca6236-triage-trigger",
+      "content_hash": "sha256:run_triage_0337a1ca6236-triage-content"
+    },
+    "subject": {
+      "kind": "skill",
+      "ref": {
+        "type": "harness",
+        "uri": "hrn_run_triage_0337a1ca6236_triage"
+      },
+      "commitments": []
+    },
+    "authority": {
+      "actor_ref": {
+        "type": "principal",
+        "uri": "runx:principal:local_runtime"
+      },
+      "grant_refs": [],
+      "scope_refs": [],
+      "authority_proof_refs": [],
+      "attenuation": {
+        "parent_authority_ref": null,
+        "subset_proof": null
+      },
+      "terms": [],
+      "enforcement": {
+        "profile_hash": "sha256:runtime-skeleton-enforcement",
+        "redaction_refs": [],
+        "setup_refs": [],
+        "teardown_refs": []
+      }
+    },
+    "signals": [],
+    "decisions": [
+      {
+        "decision_id": "dec_triage",
+        "choice": "open",
+        "inputs": {
+          "signal_refs": [],
+          "target_ref": null,
+          "opportunity_refs": [],
+          "selection_ref": null
+        },
+        "proposed_intent": {
+          "purpose": "Open runtime node triage",
+          "legitimacy": "Local graph execution requested this node",
+          "success_criteria": [],
+          "constraints": [],
+          "derived_from": []
+        },
+        "selected_act_id": "act_triage",
+        "selected_harness_ref": null,
+        "justification": {
+          "summary": "runtime graph planner selected this node",
+          "evidence_refs": []
+        },
+        "closure": null,
+        "artifact_refs": []
+      }
+    ],
+    "acts": [
+      {
+        "id": "act_triage",
+        "form": "observation",
+        "intent": {
+          "purpose": "Run graph step triage",
+          "legitimacy": "Runtime graph execution was admitted by the local harness",
+          "success_criteria": [
+            {
+              "criterion_id": "process_exit",
+              "statement": "cli-tool exits successfully",
+              "required": true
+            }
+          ],
+          "constraints": [],
+          "derived_from": []
+        },
+        "summary": "Executed graph step triage",
+        "criterion_bindings": [
+          {
+            "criterion_id": "process_exit",
+            "status": "verified",
+            "evidence_refs": [],
+            "verification_refs": [],
+            "summary": "cli-tool exited successfully"
+          }
+        ],
+        "source_refs": [],
+        "target_refs": [],
+        "artifact_refs": [],
+        "closure": {
+          "disposition": "closed",
+          "reason_code": "process_exit",
+          "summary": "cli-tool exited successfully",
+          "closed_at": "2026-06-22T08:55:44.269Z"
+        }
+      }
+    ],
+    "seal": {
+      "disposition": "closed",
+      "reason_code": "process_closed",
+      "summary": "cli-tool triage completed",
+      "closed_at": "2026-06-22T08:55:44.269Z",
+      "last_observed_at": "2026-06-22T08:55:44.269Z",
+      "criteria": [
+        {
+          "criterion_id": "process_exit",
+          "status": "verified",
+          "evidence_refs": [],
+          "verification_refs": [],
+          "summary": "cli-tool exited successfully"
+        }
+      ]
+    },
+    "lineage": {
+      "children": [],
+      "sync": []
+    }
+  },
+  {
+    "schema": "runx.receipt.v1",
+    "id": "sha256:8d98771ef2fff8bc27bb6ea974cc80507c4bda35da1b36e318a816c45ea7efa2",
+    "created_at": "2026-06-22T08:55:44.624Z",
+    "canonicalization": "runx.receipt.c14n.v1",
+    "issuer": {
+      "type": "hosted",
+      "kid": "inbox-triage-docker-test-key",
+      "public_key_sha256": "sha256:3097e2dee2cb4a34b53840cdb705aed71067c36f68db0e0f559c3f3fa043315f"
+    },
+    "signature": {
+      "alg": "Ed25519",
+      "value": "base64:WXVLWCLDgQjOK64NDGQ7RRSZp5_hpOs6xUgv0QDroZu2fCLs52bAr-JA-8JMreOT3f7pppCFPSjFVNN7tHgkCQ"
+    },
+    "digest": "sha256:0c961fa3ff4c9dcc66e27af96ad479f516a63a187044b7d6eb3b1f54f959ef71",
+    "idempotency": {
+      "intent_key": "sha256:run_triage_59bb6706134c-triage-intent",
+      "trigger_fingerprint": "sha256:run_triage_59bb6706134c-triage-trigger",
+      "content_hash": "sha256:run_triage_59bb6706134c-triage-content"
+    },
+    "subject": {
+      "kind": "skill",
+      "ref": {
+        "type": "harness",
+        "uri": "hrn_run_triage_59bb6706134c_triage"
+      },
+      "commitments": []
+    },
+    "authority": {
+      "actor_ref": {
+        "type": "principal",
+        "uri": "runx:principal:local_runtime"
+      },
+      "grant_refs": [],
+      "scope_refs": [],
+      "authority_proof_refs": [],
+      "attenuation": {
+        "parent_authority_ref": null,
+        "subset_proof": null
+      },
+      "terms": [],
+      "enforcement": {
+        "profile_hash": "sha256:runtime-skeleton-enforcement",
+        "redaction_refs": [],
+        "setup_refs": [],
+        "teardown_refs": []
+      }
+    },
+    "signals": [],
+    "decisions": [
+      {
+        "decision_id": "dec_triage",
+        "choice": "open",
+        "inputs": {
+          "signal_refs": [],
+          "target_ref": null,
+          "opportunity_refs": [],
+          "selection_ref": null
+        },
+        "proposed_intent": {
+          "purpose": "Open runtime node triage",
+          "legitimacy": "Local graph execution requested this node",
+          "success_criteria": [],
+          "constraints": [],
+          "derived_from": []
+        },
+        "selected_act_id": "act_triage",
+        "selected_harness_ref": null,
+        "justification": {
+          "summary": "runtime graph planner selected this node",
+          "evidence_refs": []
+        },
+        "closure": null,
+        "artifact_refs": []
+      }
+    ],
+    "acts": [
+      {
+        "id": "act_triage",
+        "form": "observation",
+        "intent": {
+          "purpose": "Run graph step triage",
+          "legitimacy": "Runtime graph execution was admitted by the local harness",
+          "success_criteria": [
+            {
+              "criterion_id": "process_exit",
+              "statement": "cli-tool exits successfully",
+              "required": true
+            }
+          ],
+          "constraints": [],
+          "derived_from": []
+        },
+        "summary": "Executed graph step triage",
+        "criterion_bindings": [
+          {
+            "criterion_id": "process_exit",
+            "status": "verified",
+            "evidence_refs": [],
+            "verification_refs": [],
+            "summary": "cli-tool exited successfully"
+          }
+        ],
+        "source_refs": [],
+        "target_refs": [],
+        "artifact_refs": [],
+        "closure": {
+          "disposition": "closed",
+          "reason_code": "process_exit",
+          "summary": "cli-tool exited successfully",
+          "closed_at": "2026-06-22T08:55:44.624Z"
+        }
+      }
+    ],
+    "seal": {
+      "disposition": "closed",
+      "reason_code": "process_closed",
+      "summary": "cli-tool triage completed",
+      "closed_at": "2026-06-22T08:55:44.624Z",
+      "last_observed_at": "2026-06-22T08:55:44.624Z",
+      "criteria": [
+        {
+          "criterion_id": "process_exit",
+          "status": "verified",
+          "evidence_refs": [],
+          "verification_refs": [],
+          "summary": "cli-tool exited successfully"
+        }
+      ]
+    },
+    "lineage": {
+      "children": [],
+      "sync": []
+    }
+  },
+  {
+    "schema": "runx.receipt.v1",
+    "id": "sha256:96936c9e66b2f9bbf72e1b7229fd53c6aa1fc2faa77051dd348339b57c1983ae",
+    "created_at": "2026-06-22T08:55:44.008Z",
+    "canonicalization": "runx.receipt.c14n.v1",
+    "issuer": {
+      "type": "hosted",
+      "kid": "inbox-triage-docker-test-key",
+      "public_key_sha256": "sha256:3097e2dee2cb4a34b53840cdb705aed71067c36f68db0e0f559c3f3fa043315f"
+    },
+    "signature": {
+      "alg": "Ed25519",
+      "value": "base64:gLR8uzIlEnAg00WMAZ810veDDqgCpfvZDN-Q6R-1BG_Gas0LjGl1ypspoe8BbxDyZV9MzVWQM8GSspA3iRl4CQ"
+    },
+    "digest": "sha256:1726a303835538afc071f1be1a39b7ffc6ae421e51db4aad758c06e8334fea9f",
+    "idempotency": {
+      "intent_key": "sha256:run_triage_c4a116d4e033-triage-intent",
+      "trigger_fingerprint": "sha256:run_triage_c4a116d4e033-triage-trigger",
+      "content_hash": "sha256:run_triage_c4a116d4e033-triage-content"
+    },
+    "subject": {
+      "kind": "skill",
+      "ref": {
+        "type": "harness",
+        "uri": "hrn_run_triage_c4a116d4e033_triage"
+      },
+      "commitments": []
+    },
+    "authority": {
+      "actor_ref": {
+        "type": "principal",
+        "uri": "runx:principal:local_runtime"
+      },
+      "grant_refs": [],
+      "scope_refs": [],
+      "authority_proof_refs": [],
+      "attenuation": {
+        "parent_authority_ref": null,
+        "subset_proof": null
+      },
+      "terms": [],
+      "enforcement": {
+        "profile_hash": "sha256:runtime-skeleton-enforcement",
+        "redaction_refs": [],
+        "setup_refs": [],
+        "teardown_refs": []
+      }
+    },
+    "signals": [],
+    "decisions": [
+      {
+        "decision_id": "dec_triage",
+        "choice": "open",
+        "inputs": {
+          "signal_refs": [],
+          "target_ref": null,
+          "opportunity_refs": [],
+          "selection_ref": null
+        },
+        "proposed_intent": {
+          "purpose": "Open runtime node triage",
+          "legitimacy": "Local graph execution requested this node",
+          "success_criteria": [],
+          "constraints": [],
+          "derived_from": []
+        },
+        "selected_act_id": "act_triage",
+        "selected_harness_ref": null,
+        "justification": {
+          "summary": "runtime graph planner selected this node",
+          "evidence_refs": []
+        },
+        "closure": null,
+        "artifact_refs": []
+      }
+    ],
+    "acts": [
+      {
+        "id": "act_triage",
+        "form": "observation",
+        "intent": {
+          "purpose": "Run graph step triage",
+          "legitimacy": "Runtime graph execution was admitted by the local harness",
+          "success_criteria": [
+            {
+              "criterion_id": "process_exit",
+              "statement": "cli-tool exits successfully",
+              "required": true
+            }
+          ],
+          "constraints": [],
+          "derived_from": []
+        },
+        "summary": "Executed graph step triage",
+        "criterion_bindings": [
+          {
+            "criterion_id": "process_exit",
+            "status": "verified",
+            "evidence_refs": [],
+            "verification_refs": [],
+            "summary": "cli-tool exited successfully"
+          }
+        ],
+        "source_refs": [],
+        "target_refs": [],
+        "artifact_refs": [],
+        "closure": {
+          "disposition": "closed",
+          "reason_code": "process_exit",
+          "summary": "cli-tool exited successfully",
+          "closed_at": "2026-06-22T08:55:44.008Z"
+        }
+      }
+    ],
+    "seal": {
+      "disposition": "closed",
+      "reason_code": "process_closed",
+      "summary": "cli-tool triage completed",
+      "closed_at": "2026-06-22T08:55:44.008Z",
+      "last_observed_at": "2026-06-22T08:55:44.008Z",
+      "criteria": [
+        {
+          "criterion_id": "process_exit",
+          "status": "verified",
+          "evidence_refs": [],
+          "verification_refs": [],
+          "summary": "cli-tool exited successfully"
+        }
+      ]
+    },
+    "lineage": {
+      "children": [],
+      "sync": []
+    }
+  },
+  {
+    "schema": "runx.receipt.v1",
+    "id": "sha256:fe07522bdf96de3a5bb0e8634a4e1ed2213f53a793ecf8280bc76474b40f6086",
+    "created_at": "2026-06-22T08:55:44.389Z",
+    "canonicalization": "runx.receipt.c14n.v1",
+    "issuer": {
+      "type": "hosted",
+      "kid": "inbox-triage-docker-test-key",
+      "public_key_sha256": "sha256:3097e2dee2cb4a34b53840cdb705aed71067c36f68db0e0f559c3f3fa043315f"
+    },
+    "signature": {
+      "alg": "Ed25519",
+      "value": "base64:SWRBrUb1vh1n_U2mc1iC0YTRWaYS3PP5CvvAMpqpVGYk7P7IkMJhe0rlIzSWc2eZYTf2oTOI3P7oK2Cs0p3CBw"
+    },
+    "digest": "sha256:9a1cf7774cc9d24445904568042645f529be868aad10e5c5163abbe96ab7b220",
+    "idempotency": {
+      "intent_key": "sha256:run_triage_1ee8cdbe4d85-triage-intent",
+      "trigger_fingerprint": "sha256:run_triage_1ee8cdbe4d85-triage-trigger",
+      "content_hash": "sha256:run_triage_1ee8cdbe4d85-triage-content"
+    },
+    "subject": {
+      "kind": "skill",
+      "ref": {
+        "type": "harness",
+        "uri": "hrn_run_triage_1ee8cdbe4d85_triage"
+      },
+      "commitments": []
+    },
+    "authority": {
+      "actor_ref": {
+        "type": "principal",
+        "uri": "runx:principal:local_runtime"
+      },
+      "grant_refs": [],
+      "scope_refs": [],
+      "authority_proof_refs": [],
+      "attenuation": {
+        "parent_authority_ref": null,
+        "subset_proof": null
+      },
+      "terms": [],
+      "enforcement": {
+        "profile_hash": "sha256:runtime-skeleton-enforcement",
+        "redaction_refs": [],
+        "setup_refs": [],
+        "teardown_refs": []
+      }
+    },
+    "signals": [],
+    "decisions": [
+      {
+        "decision_id": "dec_triage",
+        "choice": "open",
+        "inputs": {
+          "signal_refs": [],
+          "target_ref": null,
+          "opportunity_refs": [],
+          "selection_ref": null
+        },
+        "proposed_intent": {
+          "purpose": "Open runtime node triage",
+          "legitimacy": "Local graph execution requested this node",
+          "success_criteria": [],
+          "constraints": [],
+          "derived_from": []
+        },
+        "selected_act_id": "act_triage",
+        "selected_harness_ref": null,
+        "justification": {
+          "summary": "runtime graph planner selected this node",
+          "evidence_refs": []
+        },
+        "closure": null,
+        "artifact_refs": []
+      }
+    ],
+    "acts": [
+      {
+        "id": "act_triage",
+        "form": "observation",
+        "intent": {
+          "purpose": "Run graph step triage",
+          "legitimacy": "Runtime graph execution was admitted by the local harness",
+          "success_criteria": [
+            {
+              "criterion_id": "process_exit",
+              "statement": "cli-tool exits successfully",
+              "required": true
+            }
+          ],
+          "constraints": [],
+          "derived_from": []
+        },
+        "summary": "Executed graph step triage",
+        "criterion_bindings": [
+          {
+            "criterion_id": "process_exit",
+            "status": "verified",
+            "evidence_refs": [],
+            "verification_refs": [],
+            "summary": "cli-tool exited successfully"
+          }
+        ],
+        "source_refs": [],
+        "target_refs": [],
+        "artifact_refs": [],
+        "closure": {
+          "disposition": "closed",
+          "reason_code": "process_exit",
+          "summary": "cli-tool exited successfully",
+          "closed_at": "2026-06-22T08:55:44.389Z"
+        }
+      }
+    ],
+    "seal": {
+      "disposition": "closed",
+      "reason_code": "process_closed",
+      "summary": "cli-tool triage completed",
+      "closed_at": "2026-06-22T08:55:44.389Z",
+      "last_observed_at": "2026-06-22T08:55:44.389Z",
+      "criteria": [
+        {
+          "criterion_id": "process_exit",
+          "status": "verified",
+          "evidence_refs": [],
+          "verification_refs": [],
+          "summary": "cli-tool exited successfully"
+        }
+      ]
+    },
+    "lineage": {
+      "children": [],
+      "sync": []
+    }
+  },
+  {
+    "schema": "runx.receipt.v1",
+    "id": "sha256:feb78b596c7681d0410ff549b5f71f03018d8a4efd46eff86f95db117db5fa63",
+    "created_at": "2026-06-22T08:55:44.506Z",
+    "canonicalization": "runx.receipt.c14n.v1",
+    "issuer": {
+      "type": "hosted",
+      "kid": "inbox-triage-docker-test-key",
+      "public_key_sha256": "sha256:3097e2dee2cb4a34b53840cdb705aed71067c36f68db0e0f559c3f3fa043315f"
+    },
+    "signature": {
+      "alg": "Ed25519",
+      "value": "base64:qg_6n4o1ygBSinAnjJM8bmBJ4unDZIwhcgLFrPKpLN-PkyydwXPWW35gZW-eCgFparWTjcCOQEhpVd0HkrdeBA"
+    },
+    "digest": "sha256:0ebca6f0b70b3dd9b28c66ff33767a269c9f11abd813fcd3dea6de387671c080",
+    "idempotency": {
+      "intent_key": "sha256:run_triage_d4316f92f015-triage-intent",
+      "trigger_fingerprint": "sha256:run_triage_d4316f92f015-triage-trigger",
+      "content_hash": "sha256:run_triage_d4316f92f015-triage-content"
+    },
+    "subject": {
+      "kind": "skill",
+      "ref": {
+        "type": "harness",
+        "uri": "hrn_run_triage_d4316f92f015_triage"
+      },
+      "commitments": []
+    },
+    "authority": {
+      "actor_ref": {
+        "type": "principal",
+        "uri": "runx:principal:local_runtime"
+      },
+      "grant_refs": [],
+      "scope_refs": [],
+      "authority_proof_refs": [],
+      "attenuation": {
+        "parent_authority_ref": null,
+        "subset_proof": null
+      },
+      "terms": [],
+      "enforcement": {
+        "profile_hash": "sha256:runtime-skeleton-enforcement",
+        "redaction_refs": [],
+        "setup_refs": [],
+        "teardown_refs": []
+      }
+    },
+    "signals": [],
+    "decisions": [
+      {
+        "decision_id": "dec_triage",
+        "choice": "open",
+        "inputs": {
+          "signal_refs": [],
+          "target_ref": null,
+          "opportunity_refs": [],
+          "selection_ref": null
+        },
+        "proposed_intent": {
+          "purpose": "Open runtime node triage",
+          "legitimacy": "Local graph execution requested this node",
+          "success_criteria": [],
+          "constraints": [],
+          "derived_from": []
+        },
+        "selected_act_id": "act_triage",
+        "selected_harness_ref": null,
+        "justification": {
+          "summary": "runtime graph planner selected this node",
+          "evidence_refs": []
+        },
+        "closure": null,
+        "artifact_refs": []
+      }
+    ],
+    "acts": [
+      {
+        "id": "act_triage",
+        "form": "observation",
+        "intent": {
+          "purpose": "Run graph step triage",
+          "legitimacy": "Runtime graph execution was admitted by the local harness",
+          "success_criteria": [
+            {
+              "criterion_id": "process_exit",
+              "statement": "cli-tool exits successfully",
+              "required": true
+            }
+          ],
+          "constraints": [],
+          "derived_from": []
+        },
+        "summary": "Executed graph step triage",
+        "criterion_bindings": [
+          {
+            "criterion_id": "process_exit",
+            "status": "verified",
+            "evidence_refs": [],
+            "verification_refs": [],
+            "summary": "cli-tool exited successfully"
+          }
+        ],
+        "source_refs": [],
+        "target_refs": [],
+        "artifact_refs": [],
+        "closure": {
+          "disposition": "closed",
+          "reason_code": "process_exit",
+          "summary": "cli-tool exited successfully",
+          "closed_at": "2026-06-22T08:55:44.506Z"
+        }
+      }
+    ],
+    "seal": {
+      "disposition": "closed",
+      "reason_code": "process_closed",
+      "summary": "cli-tool triage completed",
+      "closed_at": "2026-06-22T08:55:44.506Z",
+      "last_observed_at": "2026-06-22T08:55:44.506Z",
+      "criteria": [
+        {
+          "criterion_id": "process_exit",
+          "status": "verified",
+          "evidence_refs": [],
+          "verification_refs": [],
+          "summary": "cli-tool exited successfully"
+        }
+      ]
+    },
+    "lineage": {
+      "children": [],
+      "sync": []
+    }
+  }
+]
